@@ -1,0 +1,14 @@
+.text-item{
+    text-align: center;
+    margin: 10px 0px;
+    list-style: none;   
+
+    & li {
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        margin: 10px 0;
+    }
+
+}

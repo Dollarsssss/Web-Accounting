@@ -1,0 +1,33 @@
+
+.form-control{
+    margin: 20px 0;
+ 
+    & label {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    & input {
+        padding: 10px 5px;
+        border-radius: 10px;
+        border: none;
+        width: 100%;
+    }
+
+}
+
+.button-info{
+   text-align: center;
+
+    & button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
