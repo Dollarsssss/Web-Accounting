@@ -4,8 +4,11 @@ import PropTypes from "prop-types";
 
 const Item = ({title , amout}) => {
 
-    return (
-        <li>{title}<span>{amout}</span></li>
+    const symbols = (amout < 0) ? '-':'+'
+
+   return (
+        <li style={{borderRightStyle:(amout < 0) ? 'solid' : 'solid',borderColor:(amout < 0) ? 'red' : 'blue' ,borderWidth:'5px'}}>
+        {title}<span>{symbols}{Math.abs(amout)}</span></li>
     )
 }
 
