@@ -39,7 +39,7 @@ function FormComponents({onAddItem}) {
                     <input type="text" placeholder='Assign Quantity Money' onChange={inputAmout} value={amout}/>
                 </div>
                 <div className='button-info'>
-                    <button type='submit' on>Add Info</button>
+                    <button type='submit'>Add Info</button>
                 </div>
             </form>
         </>

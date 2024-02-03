@@ -7,12 +7,6 @@ import FormComponents from './components/formComponents';
 
 function App() {
   
-  const initData = [
-    {id:1,title :"ค่ารักษา",amout:10000},
-    {id:2,title :"ค่าของใช้",amout:500},
-    {id:3,title :"ค่าเกม",amout:8000}
-  ]
-
   const [items, setItems] = useState([])
 
   function onAddNewItem(newItem){
