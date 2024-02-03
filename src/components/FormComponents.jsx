@@ -1,29 +1,31 @@
 import React,{useState} from 'react'
 import './FormComponents.css'
+import { v4 as uuidv4 } from 'uuid';
 
-function FormComponents() {
+function FormComponents({onAddItem}) {
 
     const [title , setTitle] = useState('')
-    const [quantity , setQuantity] = useState(0)
+    const [amout , setAmout] = useState(0)
 
     function inputTitle(event){
         setTitle(event.target.value)
        
     }
 
-    function inputQuantity(event){
-        setQuantity(event.target.value);
+    function inputAmout(event){
+        setAmout(event.target.value);
     }
 
     function saveItem(event){
         event.preventDefault()
         const ItemData = {
+            id:uuidv4(),
             title:title,
-            quantity:Number(quantity)
+            amout:Number(amout)
         }
-        console.log(ItemData);
+        onAddItem(ItemData)
         setTitle('')
-        setQuantity(0)
+        setAmout(0)
     }
     return (
         <>
@@ -34,7 +36,7 @@ function FormComponents() {
                 </div>
                 <div className="form-control">
                     <label>Quantity Money</label>
-                    <input type="text" placeholder='Assign Quantity Money' onChange={inputQuantity} value={quantity}/>
+                    <input type="text" placeholder='Assign Quantity Money' onChange={inputAmout} value={amout}/>
                 </div>
                 <div className='button-info'>
                     <button type='submit' on>Add Info</button>
