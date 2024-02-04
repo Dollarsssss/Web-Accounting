@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 import Transection from './components/Transection';
-import FormComponents from './components/formComponents';
+import FormComponents from './components/FormComponents';
 
 
 function App() {
