@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 const Item = ({title , amout}) => {
 
+  
     const symbols = (amout < 0) ? '-':'+'
 
    return (
