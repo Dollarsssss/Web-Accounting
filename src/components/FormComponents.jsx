@@ -3,9 +3,7 @@ import './FormComponents.css'
 import { v4 as uuidv4 } from 'uuid';
 
 function FormComponents({ onAddItem }) {
-
-    console.log('Render form components');
-
+    
     const [title, setTitle] = useState('')
     const [amout, setAmout] = useState(0)
     const [formVaild, setFormVaild] = useState(false)
