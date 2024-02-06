@@ -3,10 +3,13 @@ import DataContext from "../data/DataContext";
 
 function Report() {
 
-    const report = useContext(DataContext)
+     const {income,expense} = useContext(DataContext)
 
   return (
-    <div>{report}</div>
+    <div>
+        <p>รายรับ :{income}</p>
+        <p>รายจ่าย :{expense}</p>
+    </div>
   )
 }
 
