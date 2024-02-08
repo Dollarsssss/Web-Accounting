@@ -8,8 +8,10 @@ import Report from './components/Report';
 
 function App() {
   
+  const init = [{id:1,title:'Hamberger',amout:1000},{id:2,title:'FastFood',amout:-2000}
+  ]
 
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState(init)
   const [reportIncome ,setReportIncome] = useState(0)
   const [reportExpense ,setReportExpense] = useState(0)
 
