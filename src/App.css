@@ -16,3 +16,26 @@ body {
 .container {
   width: 350px;
 }
+
+.horizontal-menu{
+  margin: 10px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: #222;
+  padding: 10px;
+    & li {
+     width: 100%;
+     text-align: center;
+
+      & a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    & li:first-child{
+      border-right: 2px solid red;
+    }
+  
+}
