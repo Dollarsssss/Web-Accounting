@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useReducer } from 'react'
 import './App.css'
 import Transection from './components/Transection';
 import FormComponents from './components/FormComponents';
@@ -8,10 +8,7 @@ import Report from './components/Report';
 
 function App() {
   
-  const init = [{id:1,title:'Hamberger',amout:1000},{id:2,title:'FastFood',amout:-2000}
-  ]
-
-  const [items, setItems] = useState(init)
+  const [items, setItems] = useState([])
   const [reportIncome ,setReportIncome] = useState(0)
   const [reportExpense ,setReportExpense] = useState(0)
 
@@ -32,6 +29,21 @@ function App() {
     setReportExpense(expense)
  },[items])
 
+
+ //reducer state
+ const [showReport ,setShowReport] = useState(false)
+ const redecer = (state,action)=>{
+      switch(action.type){
+        case'SHOW':
+          return setShowReport(true)
+        case'HIDE':
+          return setShowReport(false)
+        
+      }
+ }
+ const [result,dispatch] = useReducer(redecer,showReport)
+ 
+
   return (
     <DataContext.Provider value={
       {
@@ -41,12 +53,16 @@ function App() {
     }>
       <div className="container">
         <h1 style={{ color: 'red', textAlign: 'center' }}>แอพรายรับ - รายจ่าย</h1>
-        <Report/>
+        {showReport && <Report/>}
         <FormComponents onAddItem={onAddNewItem} />
-        <Transection items={items} />
+        <Transection items={items} />        
+      <div>
+     <h1>{result}</h1>
+    <button onClick={()=>dispatch({type:'SHOW'})}>แสดง</button>
+    <button onClick={()=>dispatch({type:'HIDE'})}>ซ่อน</button>
+    </div>
       </div>
     </DataContext.Provider>
-
   );
 }
 
